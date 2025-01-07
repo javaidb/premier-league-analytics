@@ -1,5 +1,8 @@
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fb9e25ea-77d0-484e-a37d-7ecbc4e6d6ed" alt="Fantasy Logo" width="150" />
+</p>
 
-# Performance Analysis for FPL (Fantasy Premier League)
+# Performance Analysis for Fantasy Premier League (FPL)
 
 This project is used a personal self-study into several areas such as data collection & wrangling, feature engineering, data analysis & modeling and visualization. At surface level, it is used as a broad view of in-form players currently in the Premier League to inform an ideal Fantasy Premier League (FPL) team to maximize performance/points output. FPL is a game which assigns points to a player based on their performance output in a given game week, and so, being able to assess performance over time either by modeling or by assessment of surface statistics is vital to maximize returns.
 
