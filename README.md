@@ -50,7 +50,6 @@ This repo primarily works by processing data from various APIs and consolidating
  - [Fantasy Premier League](https://fantasy.premierleague.com/)
  - [Understat](https://understat.com/)
 
-## Contributors and Dependencies
 <p align="center">
   <img src="https://github.com/user-attachments/assets/fb9e25ea-77d0-484e-a37d-7ecbc4e6d6ed" alt="Fantasy Logo" width="150" />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
