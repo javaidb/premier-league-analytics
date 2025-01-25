@@ -36,7 +36,23 @@ This project is organized into several directories, each serving a specific purp
 
 ## Getting Started
 
-This repo primarily works by processing data from various APIs and consolidating it through various modules and visualized via jupyter notebooks. General setup is as follows:
+
+To run this project, you will need Python installed on your machine along with the required libraries. Current version utilizations being utilzied locally are as follows:
+- Python (3.11.7)
+- Virtual environment created using Python 3.11 (Not required but suggested)
+
+To create and activate virtual environment:
+
+```bash
+python -m venv .venv_fpl
+source .venv_fpl/bin/activate  # Linux/Mac
+# or
+.venv_fpl\Scripts\activate  # Windows
+
+ipython kernel install --user --name=".venv_fpl" --display-name="FPL Analytics"
+```
+
+Otherwise, this repo primarily works by processing data from various APIs and consolidating it through various modules and visualized via jupyter notebooks. General setup is as follows:
 
 - Clone this repository to your local machine.
 - Within src/config, rename data_template.json -> data.json.
