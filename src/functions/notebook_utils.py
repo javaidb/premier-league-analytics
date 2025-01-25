@@ -1,5 +1,38 @@
 import ipywidgets as widgets
 from IPython.display import display, clear_output
+import time
+import logging
+
+# Configure the logger
+def setup_logger(name):
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.DEBUG)
+    
+    # Create console handler with a higher log level
+    ch = logging.StreamHandler()
+    ch.setLevel(logging.DEBUG)
+    
+    # Create formatter and add it to the handler
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    ch.setFormatter(formatter)
+    
+    # Add the handler to the logger
+    if not logger.hasHandlers():
+        logger.addHandler(ch)
+    
+    return logger
+
+# Timing decorator
+def log_timing(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+        logger = logging.getLogger(func.__module__)
+        logger.info(f"Function {func.__name__} took {elapsed_time:.2f} seconds")
+        return result
+    return wrapper
 
 def create_search_widget(entries):
     search_box = widgets.Text(

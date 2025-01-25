@@ -137,8 +137,13 @@ class FPLDataConsolidationInterpreter(FPLRawDataCompiler):
         return compiled_player_data
 
     def _grab_all_unique_fpl_player_data(self):
-        return [{**{k: v for k, v in self.master_summary[x].items() if k in ['first_name', 'second_name', 'web_name', 'pos_singular_name_short', 'team_short_name', 'team']}, 'id': x} for x in self.player_ids]
-
+        return [
+            {
+                **{k: v for k, v in self.master_summary.get(x, {}).items() if k in ['first_name', 'second_name', 'web_name', 'pos_singular_name_short', 'team_short_name', 'team']},
+                'id': x
+            }
+            for x in self.player_ids
+        ]
     def grab_bins_from_param(self, input_param):
         if input_param == 'ict_index':
             return (3.5, 5, 7.5)
