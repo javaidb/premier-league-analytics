@@ -34,7 +34,7 @@ class FPLFetcher:
         self.base_url = config.BASE_URL
         self.raw_data, self.season_year_span_id = self._process_raw_data()
         self.latest_gw = self._get_latest_gameweek()
-        self.player_ids = self._grab_player_ids()
+        self.raw_player_ids = self._grab_player_ids()
         self.raw_element_summary = {}
         self.config_data = self._get_config_data()
         self.rival_ids = self._fetch_rivals_based_on_pts()
@@ -167,9 +167,9 @@ class FPLFetcher:
         full_element_summary = {}
         async def fetch_all_summaries():
             async with aiohttp.ClientSession() as session:
-                tasks = [self.fetch_gameweek_player_data(player_id,session) for player_id in sorted(self.player_ids)]
+                tasks = [self.fetch_gameweek_player_data(player_id,session) for player_id in sorted(self.raw_player_ids)]
                 gameweek_histories = await asyncio.gather(*tasks)
-            for player_num, player_id in enumerate(tqdm_notebook(sorted(self.player_ids), desc="Building element summaries")):
+            for player_num, player_id in enumerate(tqdm_notebook(sorted(self.raw_player_ids), desc="Building element summaries")):
                 try:
                     player_data = gameweek_histories[player_num]
                     full_element_summary[player_id] = player_data

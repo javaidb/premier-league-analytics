@@ -298,8 +298,7 @@ class NotebookDataVisualizer:
         beacon_picks = list(self.data_analytics.beacon_effective_ownership.keys())
         values = list(set(replacements).union(set(beacon_picks)))
         values = [x for x in values if x not in list(self.data_analytics.personal_team_data.keys())]
-        self.build_player_tabular_summary(player_ids=values)
-        return
+        return self.build_player_tabular_summary(player_ids=values)
 
 class FigureExporter():
     

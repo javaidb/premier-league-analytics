@@ -21,6 +21,7 @@ class FPLRawDataCompiler(FPLFetcher):
         super().__init__()
         print("Building master datasets from raw data via FPL API.")
         self.master_summary = self._build_master_summary()
+        self.player_ids = self.master_summary.keys()
         # logger.info(f"Testing logger: {self.master_summary}")
         initialize_local_data(self, [
             {
@@ -49,7 +50,7 @@ class FPLRawDataCompiler(FPLFetcher):
     # @log_timing
     def _build_master_summary(self):
         print("Building master summary.")
-        id_values = sorted(self.player_ids)
+        id_values = sorted(self.raw_player_ids)
         elem_summaries = self.grab_full_history()
         rel_elem_summaries = [x for x in elem_summaries if x['element'] in id_values]
         rel_elem_summaries = sorted(rel_elem_summaries, key=lambda x: x['round'])
@@ -91,11 +92,11 @@ class FPLRawDataCompiler(FPLFetcher):
                 raw_data_val = next((x[raw_data_col] for x in iter(bootstrap_pos) if x['id'] == pos_id))
                 consolidated_dict[player_id][f'pos_{raw_data_col}'] = raw_data_val
 
-        return {player_id: dict(data) for player_id, data in consolidated_dict.items()}
+        return {int(player_id): dict(data) for player_id, data in consolidated_dict.items()}
 
     def grab_full_history(self):
         raw_data = self.full_element_summary
-        return [gw_data for player_id in sorted(self.player_ids) for gw_data in raw_data[player_id]['history']]
+        return [gw_data for player_id in sorted(self.raw_player_ids) for gw_data in raw_data[player_id]['history']]
 
     def convert_fpl_dict_to_tabular(self):
         df_data = []
