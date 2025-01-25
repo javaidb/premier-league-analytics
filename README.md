@@ -1,5 +1,10 @@
 
-# Performance Analysis for FPL (Fantasy Premier League)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fb9e25ea-77d0-484e-a37d-7ecbc4e6d6ed" alt="Fantasy Logo" width="150" />
+</p>
+
+# Performance Analysis for Fantasy Premier League (FPL)
 
 This project is used a personal self-study into several areas such as data collection & wrangling, feature engineering, data analysis & modeling and visualization. At surface level, it is used as a broad view of in-form players currently in the Premier League to inform an ideal Fantasy Premier League (FPL) team to maximize performance/points output. FPL is a game which assigns points to a player based on their performance output in a given game week, and so, being able to assess performance over time either by modeling or by assessment of surface statistics is vital to maximize returns.
 
@@ -47,10 +52,19 @@ This repo primarily works by processing data from various APIs and consolidating
  - [Fantasy Premier League](https://fantasy.premierleague.com/)
  - [Understat](https://understat.com/)
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fb9e25ea-77d0-484e-a37d-7ecbc4e6d6ed" alt="Fantasy Logo" width="150" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/user-attachments/assets/5a84e55c-e687-4c93-95f7-800398b3b46d" alt="PL Logo" width="140" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/user-attachments/assets/99f5727b-1ff8-48e9-861d-534775dddce8" alt="GH Logo" width="50" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/user-attachments/assets/ba805d10-6560-4c61-a4f6-ccccf46dd5ba" alt="SKLearn Logo" width="120" />
+</p>
+
 ## Authors
 
 - [@javaidb](https://www.github.com/javaidb)
-
 
 ## Badges
 
